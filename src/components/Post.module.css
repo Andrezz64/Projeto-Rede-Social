@@ -89,6 +89,7 @@
 }
 
 .commentForm strong{
+    width: 100%;
     color: var(--gray-100);
     font-size: 1rem;
     line-height: 1.6rem;
@@ -100,9 +101,19 @@
     border-radius: 8px;
     background: var(--gray-900);
     height: 6rem;
-    border: 0.0625rem solid var(--green-300);    
+    border: 0;
     color: var(--gray-300);
-    padding: 1rem
+    padding: 1rem;
+    resize: none;
+}
+
+.commentForm footer{
+    visibility: hidden;
+    max-height: 0;
+}
+
+.commentForm:focus-within footer{
+    visibility: visible;    max-height: none;
 }
 
 .commentForm button{
@@ -111,5 +122,15 @@
     width: 6.75rem;
     height: 3.0625rem;
     background: var(--green-500);
-    border: 0
+    border: 0;
+    cursor: pointer;
+    color: var(--white);
+    font-weight: bold;
+    transition: background-color 0.2s;
+
+
+}
+
+.commentForm button:hover{
+    background: var(--green-300);
 }
